@@ -26,6 +26,7 @@ public class BayesianReasoner extends Reasoning {
 	List<String> feature_names;
 	double placeholder = 6.6;
 	CaseBase cb;
+	Case c;
 	String output_filename;
 	boolean train = true;
 	
@@ -33,6 +34,7 @@ public class BayesianReasoner extends Reasoning {
 		super(null);
 		this.output_filename = output_filename;
 		this.cb = cb;
+		c=(Case)cb.getCases().toArray()[0];
 	}
 
 	/**
@@ -63,7 +65,7 @@ public class BayesianReasoner extends Reasoning {
 	@Override
 	public Action selectAction(Input i){
 		
-		if(train){
+		if(changed(cb) || train){
 			try {
 				actions = CaseBase.getActionNames(cb);
 				feature_names = CaseBase.saveAsTrace(cb,output_filename, false);
@@ -121,6 +123,12 @@ public class BayesianReasoner extends Reasoning {
 		}else{
 			return input.length-1;
 		}	
+	}
+	private boolean changed(CaseBase cb){
+		if(!c.equals((Case)cb.getCases().toArray()[0])){
+			return true;
+		}
+		return false;
 	}
 	
 

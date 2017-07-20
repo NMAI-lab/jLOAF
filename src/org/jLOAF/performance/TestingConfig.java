@@ -107,9 +107,11 @@ public class TestingConfig {
 	 * @return the name of stateBasedSimilarity that is surrounded by the word stsim in the array of Strings args
 	 */
 	public String getStSim(String[] args) {
-	
-		return returnStrings("stsim",args)[0];
-		
+	String a[] =returnStrings("stsim",args);
+		if(a.length!=0){
+			return a[0];
+		}
+		return null;
 	}
 	/**
 	 * return the name of ComplexInput Similarity that is surrounded by the word cpsim in the array of Strings args.
@@ -118,7 +120,11 @@ public class TestingConfig {
 	 * @return the name of ComplexInput Similarity that is surrounded by the word cpsim in the array of Strings args.
 	 */
 	public String getCpSim(String[] args) {
-		return returnStrings("cpsim",args)[0];
+		String a[] =returnStrings("cpsim",args);
+		if(a.length!=0){
+			return a[0];
+		}
+		return null;
 	}
 	
 }
