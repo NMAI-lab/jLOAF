@@ -26,6 +26,7 @@ public class TestingConfig {
 		System.out.println("got the files");
 		return returnStrings("files",args);
 	}
+	//
 	/**
 	 * returns a string with the name of the output file
 	 * @param args a list of Strings which has the name of output file and diffrent arguments.
