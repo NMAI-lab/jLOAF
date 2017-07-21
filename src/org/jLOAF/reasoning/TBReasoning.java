@@ -29,7 +29,7 @@ public class TBReasoning extends Reasoning {
 	/**
 	 * This function implements the Temporal Backtracking algorithm. It dynamically backtracks through each run, comparing input and action
 	 * to the current input until there is consensus on the most likely action performed. 
-	 * @author Ali Fawaz
+	 * @author iBrahim Ali Fawaz
 	 * @param i A stateBasedInput
 	 * @param nn The currentList of best cases
 	 * @param time The time step
